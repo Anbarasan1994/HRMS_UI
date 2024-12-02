@@ -30,7 +30,7 @@ export class LoginComponent {
         if (token) {
            localStorage.setItem('authToken', token);
         // Display the response for debugging
-      //  alert('Login Response: ' + JSON.stringify(response)); // Show the full response in the alert
+        alert('Login Response: ' + JSON.stringify(response)); // Show the full response in the alert
 
         // Save the user details in UserService
         this.userService.username = response.username;
