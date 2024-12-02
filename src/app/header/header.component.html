@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="left">
+    <!-- Company logo section -->
+    <div class="company-logo">
+      <img src="/HRMS/assets/images/WHITESTONE.png" alt="Company Logo" class="company-icon" />
+    </div>
+
+    <!-- Links section -->
+    <div class="menu-links" [class.show]="isMenuVisible">
+      <a *ngIf="isMenuItemVisible('dashboard')" [routerLink]="'/dashboard'" [routerLinkActive]="['active']"
+        [class.disabled]="!userRole.trim()" (click)="!userRole.trim() && $event.preventDefault()">
+        My Space
+      </a>
+      <a *ngIf="isMenuItemVisible('team')" routerLink="/team" [routerLinkActive]="['active']">
+        Team
+      </a>
+      <a *ngIf="isMenuItemVisible('organization')" routerLink="/organization" [routerLinkActive]="['active']">
+        Organization
+      </a>
+    </div>
+  </div>
+
+  <!-- Right section with Logout button -->
+  <div class="right">
+    <button class="logout-button" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+
+    <!-- Hamburger menu for mobile -->
+    <div class="mobile-menu-toggle" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<app-header></app-header> <!-- The header component at the top -->
+
+<div class="main-container">
+  <app-sidebar></app-sidebar> <!-- Sidebar on the left -->
+
+  <div class="content-container">
+    <app-home-header></app-home-header> <!-- Home header below the main header -->
+
+    <div class="content">
+      <router-outlet></router-outlet> <!-- Dynamic routed content -->
+     <!-- <app-overview></app-overview>--> <!-- Static or default content (Overview) -->
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer> <!-- Footer at the bottom -->

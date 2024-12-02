@@ -1,0 +1,186 @@
+/* Attendance Component Styles */
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  padding: 10px 0;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the date range */
+  margin-bottom: 20px;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-range button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.date-range input[type="text"] {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  width: 150px;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+}
+
+.actions {
+  margin-left: auto; /* Aligns actions to the far right */
+}
+
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.check-in {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center; /* Right-align the check-in area */
+  margin-bottom: 20px;
+}
+
+.check-in button {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-in .check-in {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.check-in .check-out {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.attendance-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  color: #333;
+}
+
+.attendance-table .day {
+  font-weight: bold;
+  color: #333;
+}
+
+.attendance-table .weekend {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.attendance-table .absent {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.summary span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #777;
+  padding-top: 10px;
+}
+.checkin-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.status.in {
+  color: green;
+}
+
+.status.out {
+  color: red;
+}

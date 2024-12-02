@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="header">
+      <div class="date-range">
+        <i class="fas fa-calendar-alt"></i>
+        <span>
+          <input
+            type="date"
+            [(ngModel)]="startDate"
+            class="date-input"
+          />
+          -
+          <input
+            type="date"
+            [(ngModel)]="endDate"
+            class="date-input"
+          />
+        </span>
+      </div>
+      <button
+        (click)="applyLeave()"
+        class="apply-leave"
+        (mouseover)="enableApplyLeave = true"
+        (mouseleave)="enableApplyLeave = false"
+        [disabled]="!enableApplyLeave"
+      >
+        Apply Leave
+      </button>
+    </div>
+  
+    <div class="leave-cards">
+      <div *ngFor="let leaveType of leaveTypes" class="leave-card" (click)="navigateToApplyLeave(leaveType.name)">
+        <div class="icon" [style.color]="leaveType.color">
+          <i [class]="leaveType.icon"></i>
+        </div>
+        <h3>{{ leaveType.name }}</h3>
+        <div>Available <span class="available">{{ leaveType.available }}</span></div>
+        <div>Booked <span class="booked">{{ leaveType.booked }}</span></div>
+        <div class="info">
+          <i class="fas fa-info-circle"></i>
+        </div>
+      </div>
+    </div>
+  
+    <div class="upcoming-leave">
+      <div class="dropdown">
+        <span>Upcoming Leave & Holidays</span>
+        <select [(ngModel)]="selectedLeaveType">
+          <option *ngFor="let option of leaveOptions" [value]="option.value">
+            {{ option.label }}
+          </option>
+        </select>
+      </div>
+      <div class="image">
+        <img
+          src="https://storage.googleapis.com/a1aa/image/m116Sjhj815eQ65LDER1mhQJNg5ZwoQN5XoyM5SWiRVAbR4JA.jpg"
+          alt="Illustration of a bee with a calendar"
+          width="200"
+          height="200"
+        />
+      </div>
+    </div>
+  </div>
+  

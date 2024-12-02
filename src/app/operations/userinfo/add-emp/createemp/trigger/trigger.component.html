@@ -1,0 +1,38 @@
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-button">&#8592;</div>
+            <h1>Add User(s)</h1>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="circle">1</div>
+                <div>Create User Account</div>
+            </div>
+            <div class="step">
+                <div class="circle">2</div>
+                <div>Edit User Data</div>
+            </div>
+            <div class="step active">
+                <div class="circle">3</div>
+                <div>Trigger Onboarding</div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>Trigger Onboarding</h2>
+            <div class="radio-group">
+                <label><input type="radio" name="onboarding" value="yes"> Yes</label>
+                <label><input type="radio" name="onboarding" value="no" checked> No</label>
+            </div>
+            <div class="note">
+                Onboarding will be triggered for this record
+            </div>
+        </div>
+        <div class="submit-btn">
+            <a (click)="loadComponent('/dashboard/userinfo')" routerLink="./userinfo" >
+                <div class="icon approvals"></div>                                                   
+                <p>Finish</p>
+            </a>
+        </div>
+    </div>
+</body>

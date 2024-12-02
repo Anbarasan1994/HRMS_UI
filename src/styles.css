@@ -1,0 +1,138 @@
+/* Global styles */
+/* styles.css or styles.scss */
+/* styles.css or styles.scss */
+html {
+  font-size: 16px; /* Base font size for the whole application */
+}
+
+body {
+  font-size: 1rem; /* Optional: sets font size for body */
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem; /* Set font size for h1 globally */
+  font-weight: bold; /* Optional: Make the font bold */
+}
+
+
+  /* Container styling for consistent layout */
+  .container {
+    width: 100%;
+    padding: 20px; /* Default padding for larger screens */
+    box-sizing: border-box;
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Prevent excessive width on larger screens */
+  }
+  
+  /* Media queries for responsive design */
+  
+  /* For extra small devices (phones) */
+  @media (max-width: 600px) {
+    body {
+      font-size: 14px; /* Smaller font size on mobile devices */
+    }
+  
+    .container {
+      padding: 10px; /* Reduced padding for mobile */
+    }
+  }
+  
+  /* For small to medium devices (tablets) */
+  @media (min-width: 601px) and (max-width: 960px) {
+    .container {
+      padding: 20px; /* Default padding for tablets */
+    }
+  }
+  
+  /* For larger screens (desktops) */
+  @media (min-width: 961px) {
+    body {
+      font-size: 18px; /* Larger font size for desktop */
+    }
+  
+    .container {
+      padding: 30px; /* Increased padding for desktops */
+    }
+  }
+  
+  /* For very large screens (large desktops) */
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1400px; /* Allow for larger container width on big screens */
+    }
+  }
+  .alert {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeIn 0.4s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .alert.success {
+    background-color: #28a745; /* Green background */
+    color: white;
+    border-left: 5px solid #1c7d2b; /* Darker green border */
+  }
+  
+  .alert.error {
+    background-color: #dc3545; /* Red background */
+    color: white;
+    border-left: 5px solid #a71d2a; /* Darker red border */
+  }
+  
+  .alert.info {
+    background-color: #17a2b8; /* Blue background */
+    color: white;
+    border-left: 5px solid #0e6d7d; /* Darker blue border */
+  }
+  
+  .alert.warning {
+    background-color: #ffc107; /* Yellow background */
+    color: black;
+    border-left: 5px solid #b38c00; /* Darker yellow border */
+  }
+  
+  .alert .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .alert .close-btn:hover {
+    color: #ddd;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .snackbar-success {
+    background-color: #4caf50; /* Green */
+    color: #fff;
+  }
+  
+  .snackbar-error {
+    background-color: #f44336; /* Red */
+    color: #fff;
+  }
+  
+  

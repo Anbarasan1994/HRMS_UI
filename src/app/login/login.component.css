@@ -1,0 +1,197 @@
+/* General styles for the login page */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: url('/HRMS/assets/images/login-background.jpg') no-repeat center center/cover; /* Background image */
+  height: 100vh;
+  font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+.quote-container {
+  flex: 1;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  border-right: 2px solid #ddd;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for quote container */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.quote-container h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.quote-container p {
+  font-style: italic;
+  font-size: 18px;
+  color: #555;
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 60px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for the form */
+}
+
+.user-image img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  width: 130px;
+  margin-bottom: 30px;
+}
+
+input {
+  display: block;
+  margin-bottom: 20px;
+  padding: 12px;
+  width: 100%;
+  max-width: 320px;
+  font-size: 14px;
+  border-radius: 6px; /* Rounded input fields */
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Green glow */
+  outline: none;
+}
+
+button {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 320px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.reset-password {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reset-password button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: underline;
+}
+
+.reset-password button:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+/* Styling for the Password Input and Eye Icon */
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-container input {
+  width: 90%;
+  padding: 10px; /* Reduced padding for compactness */
+  padding-right: 40px; /* Space for the eye icon */
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.password-input-container input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
+.password-input-container i {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.password-input-container i.show {
+  color: #007bff; /* Blue color when password is visible */
+}
+
+.password-input-container i.hide {
+  color: #ccc; /* Light gray color when password is hidden */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .quote-container,
+  .login-container {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .login-container {
+    max-width: none;
+  }
+
+  .quote-container {
+    padding: 30px;
+  }
+
+  .logo-image {
+    width: 100px;
+  }
+
+  .user-image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

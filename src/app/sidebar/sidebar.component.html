@@ -1,0 +1,43 @@
+<div class="sidebar">
+  <!-- Home link -->
+  <a *ngIf="isMenuVisible('home')" routerLink="/dashboard/overview" (click)="onMenuSelect('home')" 
+     [class.active]="selectedMenu === 'home'">
+    <i class="fas fa-home"></i> Home
+  </a>
+  
+  <!-- Onboarding menu -->
+  <a *ngIf="isMenuVisible('onboarding')" routerLink="/dashboard/onboarding" (click)="onMenuSelect('onboarding')" 
+     [class.active]="selectedMenu === 'onboarding'">
+    <i class="fas fa-user-plus"></i> Onboarding
+  </a>
+  
+  <!-- Attendance menu -->
+  <a *ngIf="isMenuVisible('attendance')" routerLink="/dashboard/attendance" (click)="onMenuSelect('attendance')" 
+     [class.active]="selectedMenu === 'attendance'">
+    <i class="fas fa-calendar-check"></i> Attendance
+  </a>
+  
+  <!-- Leave Tracker menu -->
+  <a *ngIf="isMenuVisible('leave-summary')" routerLink="/dashboard/leave-summary" (click)="onMenuSelect('leave-summary')" 
+     [class.active]="selectedMenu === 'leave-summary'">
+    <i class="fas fa-clock"></i> Leave Tracker
+  </a>
+  
+  <!-- Tasks menu -->
+  <a *ngIf="isMenuVisible('tasks')" routerLink="/tasks" (click)="onMenuSelect('tasks')" 
+     [class.active]="selectedMenu === 'tasks'">
+    <i class="fas fa-tasks"></i> Tasks
+  </a>
+
+  <!-- Operations menu -->
+  <a *ngIf="isMenuVisible('settings')" routerLink="/dashboard/operations" (click)="onMenuSelect('settings')" 
+     [class.active]="selectedMenu === 'settings'">
+    <i class="fas fa-cogs"></i> Operations
+  </a>
+  
+  <!-- Analytics menu -->
+  <a *ngIf="isMenuVisible('analytics')" routerLink="/analytics" (click)="onMenuSelect('analytics')" 
+     [class.active]="selectedMenu === 'analytics'">
+    <i class="fas fa-chart-line"></i> Analytics
+  </a>
+</div>

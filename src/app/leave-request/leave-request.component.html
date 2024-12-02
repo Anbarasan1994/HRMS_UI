@@ -1,0 +1,25 @@
+  
+  <div class="content">
+    <div class="dropdown">
+      <select [(ngModel)]="selectedLeaveType">
+        <option *ngFor="let option of leaveOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+  
+    <div class="no-data" *ngIf="!hasData">
+      <img
+        src="https://storage.googleapis.com/a1aa/image/5MWcRUNssN6KO9yUPQlebQ8HjUGlnX5qfMo29HAb2E3duPwTA.jpg"
+        alt="Illustration of a robot with a magnifying glass"
+        width="150"
+        height="150"
+      />
+      <p>No Data Found</p>
+      <button (click)="addRequest()">Add Request</button>
+    </div>
+  
+    <div class="actions">
+      <i class="fas fa-filter"></i>
+      <i class="fas fa-ellipsis-h"></i>
+    </div>
+  </div>
+  

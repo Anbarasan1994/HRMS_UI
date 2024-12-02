@@ -1,0 +1,60 @@
+<div class="content" ng-controller="OnboardingController as ctrl">
+   
+    <div class="main-content">
+      <div class="controls">
+        <div>
+          <select>
+            <option>Candidate View</option>
+          </select>
+          <button>Edit</button>
+        </div>
+        <div>
+          
+          <span style="color: blue;">View All Data  </span>
+          <select>
+            <option>Reportees + My Data</option>
+            <option value="reports-data">Reportee's Data</option>
+            <option value="direct-report">Direct Reportee's Data</option>
+            <option value="my-data">My Data</option>
+          </select>
+          <button routerLink="/dashboard/addcandidate">Add Candidate</button>
+        </div>
+      </div>
+  
+      <!-- Conditionally show the table if form is not displayed -->
+      <div class="table-container">
+        <table ng-if="!ctrl.isAddCandidateFormVisible">
+          <thead>
+            <tr>
+              <th class="icon-cell"><i class="fas fa-copy"></i></th>
+              <th class="checkbox-cell"><input type="checkbox"></th>
+              <th>First name <i class="fas fa-sort"></i></th>
+              <th>Last name <span class="sort-icons"><i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></span></th>
+              <th>Email ID <span class="sort-icons"><i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></span></th>
+              <th>Official Email <span class="sort-icons"><i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></span></th>
+              <th>Onboarding Status <span class="sort-icons"><i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></span></th>
+              <th>Department <span class="sort-icons"><i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></span></th>
+              <th>Source of Hire <span class="sort-icons"><i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></span></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+     <table>
+    <tbody>
+    
+          <tr>
+            <td class="no-records" colspan="9">
+              <img
+                src="https://storage.googleapis.com/a1aa/image/f8xmipNuDYWAfEXTaxjfoXp4GR6eMNWfFKJeeAW2edIoyu7tTA.jpg"
+                alt="Illustration of a robot holding a box"
+                width="150"
+                height="150"
+              />
+             
+              <div>No records found</div>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
