@@ -37,7 +37,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 60px;
+  padding: 30px 60px; /* Reduced padding for tighter layout */
   background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
   max-width: 450px;
   margin: 0 auto;
@@ -49,17 +49,19 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: -80px; /* Reduced space between image and text box */
 }
 
 .logo-image {
-  width: 130px;
-  margin-bottom: 30px;
+  width: 300px;  /* Reduce width */
+  margin-bottom: 1px; /* Space between logo and inputs */
 }
+
+
 
 input {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 12px; /* Reduced space between inputs */
   padding: 12px;
   width: 100%;
   max-width: 320px;
