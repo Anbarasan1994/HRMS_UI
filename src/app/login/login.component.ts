@@ -31,6 +31,7 @@ export class LoginComponent {
            localStorage.setItem('authToken', token);
         // Display the response for debugging
         //alert('Login Response: ' + JSON.stringify(response)); // Show the full response in the alert
+        //
         // Save the user details in UserService
         this.userService.username = response.username;
         this.userService.employeeId = response.employeeId;
