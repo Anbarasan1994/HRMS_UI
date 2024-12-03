@@ -48,6 +48,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ApiService } from './api.service';
 import { TimeFormatInterceptor } from './interceptors/time-format.interceptor';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { EmployeeAttendanceSummaryComponent } from './employee-attendance-summary/employee-attendance-summary.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AddEmpComponent,
     CreateempComponent,
     UserinfoComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    EmployeeAttendanceSummaryComponent
   ],
   imports: [
     BrowserModule,

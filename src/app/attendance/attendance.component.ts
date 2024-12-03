@@ -19,6 +19,9 @@ export class AttendanceComponent implements OnInit {
   employeeStatus: string = 'Out';
   checkInLocation: string = '';
   checkOutLocation: string = '';
+  startDate: string = '';
+  endDate: string = '';
+  attendanceData: any[] = []; 
 
   constructor(
     private attendanceService: AttendanceService,
@@ -38,7 +41,21 @@ export class AttendanceComponent implements OnInit {
       this.elapsedTime = time;
     });
   }
-
+  getAttendanceDetails(): void {
+    if (this.startDate && this.endDate) {
+      this.apiService.fetchAttendanceData(this.employeeId, this.startDate, this.endDate).subscribe(
+        (response) => {
+          // Store the response in attendanceData array
+          this.attendanceData = response;
+        },
+        (error) => {
+          console.error('Error fetching attendance data:', error);
+        }
+      );
+    } else {
+      alert('Please select both start and end dates.');
+    }
+  }
   checkOut(): void {
     const dialogRef = this.dialog.open(CheckOutDialogComponent);
 
@@ -205,6 +222,7 @@ export class AttendanceComponent implements OnInit {
           this.attendanceService.startTimer(elapsedTime);
         } else {
           this.attendanceService.stopTimer();
+          this.elapsedTime = '00:00:00';
           this.employeeStatus = 'Out';
         }
       },

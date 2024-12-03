@@ -32,6 +32,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   checkInLocation: string = ''; // Track the check-in location
   checkOutLocation: string = ''; // Track the check-out location
 
+
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef, static: true })
   container: ViewContainerRef | undefined;
 
@@ -65,41 +66,51 @@ export class OverviewComponent implements OnInit, OnDestroy {
     });
   }
 
-  private checkTimerStatusOnLoad(): void {
+  checkTimerStatusOnLoad(): void {
     this.apiService.getCheckInStatus(this.employeeId).subscribe(
       (response) => {
         if (response.isCheckedIn) {
-          // Convert the ISO 8601 string to a Date object, then get the timestamp
-          this.checkInTime = new Date(response.checkInTime).getTime();
+          // Fix the date format if needed (ensure it's in ISO 8601 format)
+          let checkInTimeString = response.checkInTime.replace(' ', 'T'); // Convert space to 'T'
+          
+          // If the backend does not provide time in UTC (Z), you can manually add the 'Z' (indicating UTC)
+          if (!checkInTimeString.endsWith('Z')) {
+            checkInTimeString += 'Z'; // Add 'Z' for UTC time
+          }
+  
+          // Convert the corrected string to a Date object
+          this.checkInTime = new Date(checkInTimeString).getTime();
           console.log("Check-in time in milliseconds:", this.checkInTime);  // Debug log to verify the value
-
+  
           // Check if checkInTime is valid
           if (isNaN(this.checkInTime)) {
             console.error('Invalid check-in time:', this.checkInTime);
             return; // Prevent further execution if the check-in time is invalid
           }
-
+  
           // Get check-in location from localStorage (if available)
           this.checkInLocation = localStorage.getItem('checkInLocation') || '';
-
+  
           // Set employee status to "In"
           this.employeeStatus = 'In';
-
+  
           // Calculate the elapsed time since the check-in time
           const elapsedTime = Date.now() - this.checkInTime;
           console.log("Elapsed time in milliseconds:", elapsedTime);  // Debug log to verify the value
-
+  
           // Pass the calculated elapsed time to the timer service
           this.attendanceService.startTimer(elapsedTime);
         } else {
           // If the user is not checked in, stop the timer
           this.attendanceService.stopTimer();
+          this.timerDisplay='00:00:00';
           this.employeeStatus = 'Out';
         }
       },
       (error) => console.error('Error fetching check-in status:', error)
     );
   }
+  
 
 
 

@@ -21,6 +21,7 @@ import { TriggerComponent } from './operations/userinfo/add-emp/createemp/trigge
 import { AddEmpComponent } from './operations/userinfo/add-emp/add-emp.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AuthGuard } from './auth.guard';
+import { EmployeeAttendanceSummaryComponent } from './employee-attendance-summary/employee-attendance-summary.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -44,6 +45,7 @@ export const routes: Routes = [
       { path: 'leave-balance', component: LeaveBalanceComponent },
       { path: 'leave-request', component: LeaveRequestComponent },
       { path: 'attendance', component: AttendanceComponent },
+      { path: 'attendanceAll', component: EmployeeAttendanceSummaryComponent },
       { path: 'overview', component: OverviewComponent },   // Overview route
       { path: 'calendar', component: CalendarComponent },
       { path: 'widgets', component: WidgetComponent },       // Widget route
