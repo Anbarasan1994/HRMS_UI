@@ -28,14 +28,14 @@ export class WidgetComponent implements OnInit {
   // Mock function to load upcoming birthdays
   loadUpcomingBirthdays() {
     this.upcomingBirthdays = [
-      { name: 'John Doe', birthday: new Date('2024-11-08') },
-      { name: 'Jane Smith', birthday: new Date('2024-11-12') },
+      // { name: 'John Doe', birthday: new Date('2024-11-08') },
+      // { name: 'Jane Smith', birthday: new Date('2024-11-12') },
     ];
   }
 
   // Mock function to load attendance
   loadAttendance() {
-    this.totalAttendance = 25; // Example data: 25 employees are present today
+   // this.totalAttendance = 25; // Example data: 25 employees are present today
   }
 
 }

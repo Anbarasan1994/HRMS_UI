@@ -46,6 +46,7 @@ export class AttendanceService {
   public stopTimer(): void {
     if (this.timerInterval) {
       clearInterval(this.timerInterval);
+      this.elapsedTimeSubject.next('00:00:00');
       this.timerInterval = null;
     }
   }

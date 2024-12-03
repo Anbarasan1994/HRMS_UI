@@ -11,10 +11,10 @@
         [class.disabled]="!userRole.trim()" (click)="!userRole.trim() && $event.preventDefault()">
         My Space
       </a>
-      <a *ngIf="isMenuItemVisible('team')" routerLink="/team" [routerLinkActive]="['active']">
+      <a *ngIf="isMenuItemVisible('team')" routerLink="/dashboard" [routerLinkActive]="['active']">
         Team
       </a>
-      <a *ngIf="isMenuItemVisible('organization')" routerLink="/organization" [routerLinkActive]="['active']">
+       <a *ngIf="isMenuItemVisible('organization')" routerLink="/dashboard" [routerLinkActive]="['active']"> 
         Organization
       </a>
     </div>

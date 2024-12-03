@@ -1,0 +1,46 @@
+<div class="content">
+  <div class="top-bar">
+      <div class="date-range">
+          <label for="fromDate">From:</label>
+          <input id="fromDate" type="date" [(ngModel)]="startDate" />
+          
+          <label for="toDate">To:</label>
+          <input id="toDate" type="date" [(ngModel)]="endDate" />
+          
+          <!-- <label for="employeeId">Employee ID:</label>
+          <input id="employeeId" type="text" [(ngModel)]="employeeId" /> -->
+          
+          <button (click)="getAttendanceDetails()">Fetch Attendance</button>
+      </div>
+  </div>
+
+  <div class="attendance-details">
+      <table class="attendance-table" *ngIf="attendanceData && attendanceData.length > 0">
+          <thead>
+              <tr>
+                  <th>S.No</th>
+                  <th>Emp_Id</th>
+                  <th>Emp_Name</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Check-In</th>
+                  <th>Check-Out</th>
+                  <th>Hours Worked</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let record of attendanceData; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ record.employeeId }}</td>
+                  <td>{{ record.employeeName }}</td>
+                  <td>{{ record.date }}</td>
+                  <td>{{ record.status }}</td>
+                  <td>{{ record.checkIn }}</td>
+                  <td>{{ record.checkOut }}</td>
+                  <td>{{ record.hoursWorked }}</td>
+              </tr>
+          </tbody>
+      </table>
+      <p *ngIf="!attendanceData || attendanceData.length === 0">No records found</p>
+  </div>
+</div>
