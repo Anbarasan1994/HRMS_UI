@@ -1,73 +1,61 @@
 <div class="container">
-  <!-- <div class="header">
-    <h1>Attendance Summary</h1>
-    <div class="tabs">
-      <a href="#" class="active">Attendance Summary</a>
-      <a href="#">Shift</a>
-    </div>
-  </div> -->
   <div class="content">
     <div class="top-bar">
       <div class="date-range">
-        <!-- <button><i class="fas fa-chevron-left"></i></button>
-        <input type="text" [value]="dateRange" readonly />
-        <button><i class="fas fa-chevron-right"></i></button> -->
       </div>
       <div class="actions">
-        <!-- <button><i class="fas fa-th-large"></i></button>
-        <button><i class="fas fa-list"></i></button>
-        <button><i class="fas fa-calendar-alt"></i></button> -->
         <button><i class="fas fa-ellipsis-h"></i></button>
       </div>
     </div>
     <div class="check-in">
       <div class="status" [ngClass]="{ 'in': employeeStatus === 'In', 'out': employeeStatus === 'Out' }">{{ employeeStatus }}</div>
-      <!-- <div class="timer">{{ timerDisplay }}</div> -->
       <button *ngIf="employeeStatus === 'Out'" (click)="checkIn()" class="checkin-btn">Check-in</button>
       <button *ngIf="employeeStatus === 'In'" (click)="checkOut()" class="checkout-btn">Check-out</button>
     
       <span class="timer">{{ elapsedTime }} Hrs</span>
     </div>
-    <!-- <table class="attendance-table">
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Status</th>
-          <th>Hours Worked</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="day">Sun 10</td>
-          <td class="status"><span class="weekend">Weekend</span></td>
-          <td class="hours-worked">00:00 Hrs worked</td>
-        </tr>
-        <tr>
-          <td class="day">Mon 11</td>
-          <td class="status"><span class="absent">Absent</span></td>
-          <td class="hours-worked">00:00 Hrs worked</td>
-        </tr>
-        <tr>
-          <td class="day">Tue 12</td>
-          <td class="status"><span class="absent">Absent</span></td>
-          <td class="hours-worked">00:00 Hrs worked</td>
-        </tr>
-        <tr>
-          <td class="day">Today 13</td>
-          <td class="status"></td>
-          <td class="hours-worked">00:00 Hrs worked</td>
-        </tr>
-      </tbody>
-    </table> -->
+    <!-- <div class="content">
+      <div class="top-bar">
+        <div class="date-range">
+          <label for="fromDate">From:</label>
+          <input id="fromDate" type="date" [(ngModel)]="startDate" />
+          
+          <label for="toDate">To:</label>
+          <input id="toDate" type="date" [(ngModel)]="endDate" />
+          
+         <label for="employeeId">Employee ID:</label>
+          <input id="employeeId" type="text" [(ngModel)]="employeeId" /> 
+          
+          <button (click)="getAttendanceDetails()">Fetch Attendance</button>
+        </div>
+      </div>
+      
+      <div class="attendance-details">
+        <table class="attendance-table" *ngIf="attendanceData && attendanceData.length > 0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Check-In</th>
+              <th>Check-Out</th>
+              <th>Hours Worked</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of attendanceData">
+              <td>{{ record.date }}</td>
+              <td>{{ record.status }}</td>
+              <td>{{ record.checkIn }}</td>
+              <td>{{ record.checkOut }}</td>
+              <td>{{ record.hoursWorked }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p *ngIf="!attendanceData || attendanceData.length === 0">No records found</p>
+      </div>
+    </div> -->
+    
     <div class="footer">
-      <!-- <div class="summary">
-        <span class="payable-days"><i></i> Payable Days  Days</span>
-        <span class="present-days"><i></i> Present 0 Days</span>
-        <span class="on-duty-days"><i></i> On Duty 0 Days</span>
-        <span class="paid-leave-days"><i></i> Paid leave 0 Days</span>
-        <span class="holidays"><i></i> Holidays 0 Days</span>
-        <span class="weekend"><i></i> Weekend 2 Days</span>
-      </div> -->
       <div class="timeline">
         <span><i></i> 09AM</span>
         <span><i></i> 10AM</span>
