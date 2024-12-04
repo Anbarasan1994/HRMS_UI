@@ -170,7 +170,15 @@ export class ApiService {
       catchError(this.handleError) // Use the generic error handler
     );
   }
-  
+
+  fetchAttendanceData(employeeId: string, startDate: string, endDate: string): Observable<any[]> {
+    const url = `${this.apiUrl}/attendance/data?employeeId=${encodeURIComponent(employeeId)}&startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+    return this.http.get<any[]>(url).pipe(catchError(this.handleError));
+}
+getAttendanceAll(employeeId: string,startDate: string, endDate: string): Observable<any> {
+  const url = `${this.apiUrl}/attendance/data?employeeId=${encodeURIComponent(employeeId)}&startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+  return this.http.get<any[]>(url).pipe(catchError(this.handleError));
+}
   // Generic error handler
   private handleError(error: any): Observable<never> {
     // Log the error for debugging
