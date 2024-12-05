@@ -3,9 +3,6 @@
     <div class="top-bar">
       <div class="date-range">
       </div>
-      <div class="actions">
-        <button><i class="fas fa-ellipsis-h"></i></button>
-      </div>
     </div>
     <div class="check-in">
       <div class="status" [ngClass]="{ 'in': employeeStatus === 'In', 'out': employeeStatus === 'Out' }">{{ employeeStatus }}</div>
@@ -14,7 +11,7 @@
     
       <span class="timer">{{ elapsedTime }} Hrs</span>
     </div>
-    <!-- <div class="content">
+     <div class="content">
       <div class="top-bar">
         <div class="date-range">
           <label for="fromDate">From:</label>
@@ -23,8 +20,8 @@
           <label for="toDate">To:</label>
           <input id="toDate" type="date" [(ngModel)]="endDate" />
           
-         <label for="employeeId">Employee ID:</label>
-          <input id="employeeId" type="text" [(ngModel)]="employeeId" /> 
+         <!-- <label for="employeeId">Employee ID:</label>
+          <input id="employeeId" type="text" [(ngModel)]="employeeId" />  -->
           
           <button (click)="getAttendanceDetails()">Fetch Attendance</button>
         </div>
@@ -34,7 +31,7 @@
         <table class="attendance-table" *ngIf="attendanceData && attendanceData.length > 0">
           <thead>
             <tr>
-              <th>Date</th>
+              <th>Attendance Date</th>
               <th>Status</th>
               <th>Check-In</th>
               <th>Check-Out</th>
@@ -43,7 +40,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let record of attendanceData">
-              <td>{{ record.date }}</td>
+              <td>{{ record.attendanceDate }}</td>
               <td>{{ record.status }}</td>
               <td>{{ record.checkIn }}</td>
               <td>{{ record.checkOut }}</td>
@@ -53,7 +50,7 @@
         </table>
         <p *ngIf="!attendanceData || attendanceData.length === 0">No records found</p>
       </div>
-    </div> -->
+    </div> 
     
     <div class="footer">
       <div class="timeline">

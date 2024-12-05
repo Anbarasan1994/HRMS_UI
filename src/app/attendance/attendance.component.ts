@@ -47,6 +47,15 @@ export class AttendanceComponent implements OnInit {
         (response) => {
           // Store the response in attendanceData array
           this.attendanceData = response;
+  
+          // Format the date and time fields (attendanceDate, checkInTime, checkOutTime)
+          this.attendanceData = this.attendanceData.map((record) => {
+            // Format the date and time fields
+            record.attendanceDate = this.formatDate(record.date);
+            record.checkIn = this.formatTime(record.checkIn);
+            record.checkOut = this.formatTime(record.checkOut);
+            return record;
+          });
         },
         (error) => {
           console.error('Error fetching attendance data:', error);
@@ -55,6 +64,26 @@ export class AttendanceComponent implements OnInit {
     } else {
       alert('Please select both start and end dates.');
     }
+  }
+  // Method to format date as 'yyyy-MM-dd HH:mm:ss'
+  formatDate(date: any): string {
+    const formattedDate = new Date(date);
+    const year = formattedDate.getFullYear();
+    const month = (formattedDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = formattedDate.getDate().toString().padStart(2, '0');
+    return `${day}-${month}-${year}`;
+  }
+  
+  formatTime(date: any): string {
+    const formattedDate = new Date(date);
+    if (isNaN(formattedDate.getTime())) {
+      return 'N/A'; // Return 'N/A' if the date is invalid
+    }
+    const hours = formattedDate.getHours().toString().padStart(2, '0');
+    const minutes = formattedDate.getMinutes().toString().padStart(2, '0');
+    const seconds = formattedDate.getSeconds().toString().padStart(2, '0');
+    
+    return `${hours}:${minutes}:${seconds}`;
   }
   checkOut(): void {
     const dialogRef = this.dialog.open(CheckOutDialogComponent);
